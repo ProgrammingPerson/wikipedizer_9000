@@ -184,28 +184,6 @@ DEFAULT_CATEGORIES = {
             "Planetary equilibrium temperature",
         ]
     },
-    "notable_exoplanets_2026": {
-        "description": "Specific exoplanets for 2026 Science Olympiad",
-        "topics": [
-            "HD 80606 b",
-            "WASP-17b",
-            "WASP-121b",
-            "LTT 9779 b",
-            "GJ 1214 b",
-            "K2-18b",
-            "TOI-270",
-            "LHS 3844 b",
-            "55 Cancri e",
-            "Kepler-62",
-            "AU Microscopii",
-            "Epsilon Eridani",
-            "PSR B1257+12",
-            "WD 1856+534",
-            "TRAPPIST-1",
-            "Proxima Centauri b",
-            "51 Pegasi b",
-        ]
-    },
     "exoplanet_missions": {
         "description": "Space missions for exoplanet discovery",
         "topics": [
@@ -214,23 +192,19 @@ DEFAULT_CATEGORIES = {
             "James Webb Space Telescope",
         ]
     },
-    "deep_sky_objects": {
-        "description": "Nebulae and DSOs relevant to stellar evolution",
+    "2026_dsos": {
+        "description": "Official 2026 Science Olympiad Deep Sky Objects",
         "topics": [
-            "Orion Nebula",
-            "Tarantula Nebula",
-            "Eagle Nebula",
-            "Pillars of Creation",
-            "Carina Nebula",
-            "Eta Carinae",
-            "Horsehead Nebula",
-            "Lagoon Nebula",
-            "Trifid Nebula",
-            "Crab Nebula",
-            "Crab Pulsar",
-            "Ring Nebula",
+            "Orion Molecular Cloud Complex",
+            "NGC 6559",
+            "Sharpless 29",
+            "HP Tau",
+            "T Tauri star",
+            "Mira",
+            "Mira variable",
             "Helix Nebula",
-            "Cat's Eye Nebula",
+            "Janus (star)",
+            "White dwarf",
         ]
     },
     "observational_techniques": {

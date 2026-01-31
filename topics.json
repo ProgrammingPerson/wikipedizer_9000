@@ -1,269 +1,192 @@
 {
-  "stellar_evolution_basics": {
-    "description": "Core concepts of how stars change over time",
-    "topics": [
-      "Stellar evolution",
-      "Star formation",
-      "Jeans mass",
-      "Jeans instability",
-      "Protostar",
-      "Pre-main-sequence star",
-      "Zero-age main sequence",
-      "Main sequence",
-      "Stellar mass",
-      "Mass-luminosity relation"
-    ]
-  },
-  "stellar_classification": {
-    "description": "Classification systems and stellar properties",
-    "topics": [
-      "Stellar classification",
-      "Hertzsprung-Russell diagram",
-      "Spectral type",
-      "O-type main-sequence star",
-      "B-type main-sequence star",
-      "A-type main-sequence star",
-      "F-type main-sequence star",
-      "G-type main-sequence star",
-      "K-type main-sequence star",
-      "M-type main-sequence star",
-      "Luminosity class",
-      "Morgan-Keenan classification",
-      "Color index",
-      "Effective temperature",
-      "Absolute magnitude",
-      "Apparent magnitude"
-    ]
-  },
-  "star_formation_regions": {
-    "description": "Processes and regions of star formation",
-    "topics": [
-      "Molecular cloud",
-      "Giant molecular cloud",
-      "Bok globule",
-      "H II region",
-      "H I region",
-      "Interstellar medium",
-      "Herbig-Haro object",
-      "T Tauri star",
-      "FU Orionis star",
-      "Herbig Ae/Be star",
-      "Protoplanetary disk",
-      "Circumstellar disk",
-      "Debris disk",
-      "Bipolar outflow"
-    ]
-  },
-  "low_mass_evolution": {
-    "description": "Evolution of low and medium mass stars (like our Sun)",
-    "topics": [
-      "Red dwarf",
-      "Brown dwarf",
-      "Subgiant",
-      "Red giant branch",
-      "Red giant",
-      "Horizontal branch",
-      "Red clump",
-      "Asymptotic giant branch",
-      "Thermal pulse",
-      "Planetary nebula",
-      "White dwarf",
-      "Chandrasekhar limit",
-      "Electron degeneracy pressure"
-    ]
-  },
-  "high_mass_evolution": {
-    "description": "Evolution of massive stars",
-    "topics": [
-      "Blue giant",
-      "Blue supergiant",
-      "Red supergiant",
-      "Wolf-Rayet star",
-      "Luminous blue variable",
-      "Yellow supergiant",
-      "Supernova",
-      "Core-collapse supernova",
-      "Type II supernova",
-      "Supernova remnant",
-      "Neutron star",
-      "Pulsar",
-      "Magnetar",
-      "Black hole",
-      "Stellar black hole"
-    ]
-  },
-  "binary_and_variable_stars": {
-    "description": "Binary systems and variable stars",
-    "topics": [
-      "Binary star",
-      "Eclipsing binary",
-      "Spectroscopic binary",
-      "Contact binary",
-      "Mass transfer",
-      "Roche lobe",
-      "Type Ia supernova",
-      "Nova",
-      "Cataclysmic variable star",
-      "Variable star",
-      "Cepheid variable",
-      "RR Lyrae variable",
-      "Mira variable",
-      "Pulsating star"
-    ]
-  },
-  "stellar_physics": {
-    "description": "Physical processes in stars",
-    "topics": [
-      "Nuclear fusion",
-      "Proton-proton chain",
-      "CNO cycle",
-      "Triple-alpha process",
-      "Carbon-burning process",
-      "Neon-burning process",
-      "Oxygen-burning process",
-      "Silicon-burning process",
-      "Stellar nucleosynthesis",
-      "S-process",
-      "R-process",
-      "Hydrostatic equilibrium",
-      "Radiation pressure",
-      "Convection zone",
-      "Radiative zone",
-      "Stellar core",
-      "Stellar atmosphere"
-    ]
-  },
-  "exoplanet_detection": {
-    "description": "Methods for detecting exoplanets",
-    "topics": [
-      "Exoplanet",
-      "Methods of detecting exoplanets",
-      "Transit photometry",
-      "Doppler spectroscopy",
-      "Radial velocity method",
-      "Direct imaging",
-      "Gravitational microlensing",
-      "Astrometry",
-      "Transit-timing variation",
-      "Pulsar timing"
-    ]
-  },
-  "exoplanet_types": {
-    "description": "Types and characteristics of exoplanets",
-    "topics": [
-      "Hot Jupiter",
-      "Super-Earth",
-      "Mini-Neptune",
-      "Sub-Neptune",
-      "Gas giant",
-      "Ice giant",
-      "Terrestrial planet",
-      "Ocean planet",
-      "Lava planet",
-      "Circumbinary planet",
-      "Rogue planet",
-      "Habitable zone",
-      "Planetary equilibrium temperature",
-      "Planetary habitability"
-    ]
-  },
-  "notable_exoplanets_2026": {
-    "description": "Specific exoplanets for 2026 Science Olympiad",
-    "topics": [
-      "HD 80606 b",
-      "WASP-17b",
-      "WASP-121b",
-      "LTT 9779 b",
-      "GJ 1214 b",
-      "K2-18b",
-      "TOI-270",
-      "LHS 3844 b",
-      "55 Cancri e",
-      "Kepler-62",
-      "Kepler-62f",
-      "AU Microscopii",
-      "Epsilon Eridani",
-      "PSR B1257+12",
-      "WD 1856+534",
-      "TRAPPIST-1",
-      "Proxima Centauri b",
-      "51 Pegasi b"
-    ]
-  },
-  "exoplanet_missions": {
-    "description": "Space missions for exoplanet discovery",
-    "topics": [
-      "Kepler space telescope",
-      "TESS (spacecraft)",
-      "James Webb Space Telescope",
-      "CHEOPS",
-      "CoRoT",
-      "Hubble Space Telescope",
-      "Spitzer Space Telescope",
-      "Nancy Grace Roman Space Telescope"
-    ]
-  },
-  "deep_sky_objects": {
-    "description": "Nebulae and DSOs relevant to stellar evolution",
-    "topics": [
-      "Orion Nebula",
-      "Tarantula Nebula",
-      "Eagle Nebula",
-      "Pillars of Creation",
-      "Carina Nebula",
-      "Eta Carinae",
-      "Horsehead Nebula",
-      "Lagoon Nebula",
-      "Trifid Nebula",
-      "Omega Nebula",
-      "Rosette Nebula",
-      "North America Nebula",
-      "Crab Nebula",
-      "Crab Pulsar",
-      "Ring Nebula",
-      "Helix Nebula",
-      "Cat's Eye Nebula",
-      "Dumbbell Nebula",
-      "Veil Nebula"
-    ]
-  },
-  "observational_techniques": {
-    "description": "Measurement techniques and distance determination",
-    "topics": [
-      "Cosmic distance ladder",
-      "Parallax",
-      "Stellar parallax",
-      "Standard candle",
-      "Distance modulus",
-      "Light curve",
-      "Stellar kinematics",
-      "Proper motion",
-      "Radial velocity",
-      "Spectroscopy",
-      "Photometry",
-      "Astrometry",
-      "Redshift"
-    ]
-  },
-  "fundamental_physics": {
-    "description": "Physics foundations for astronomy",
-    "topics": [
-      "Black-body radiation",
-      "Wien's displacement law",
-      "Stefan-Boltzmann law",
-      "Planck's law",
-      "Luminosity",
-      "Solar luminosity",
-      "Flux",
-      "Inverse-square law",
-      "Kepler's laws of planetary motion",
-      "Orbital mechanics",
-      "Orbital period",
-      "Semi-major axis",
-      "Orbital eccentricity",
-      "Gravitational binding energy",
-      "Virial theorem",
-      "Electromagnetic spectrum"
-    ]
-  }
+    "stellar_evolution_basics": {
+        "description": "Core concepts of how stars change over time",
+        "topics": [
+            "Stellar evolution",
+            "Star formation",
+            "Jeans mass",
+            "Protostar",
+            "Pre-main-sequence star",
+            "Zero-age main sequence",
+            "Main sequence",
+            "Stellar mass",
+            "Mass-luminosity relation"
+        ]
+    },
+    "stellar_classification": {
+        "description": "Classification systems and stellar properties",
+        "topics": [
+            "Stellar classification",
+            "Hertzsprung-Russell diagram",
+            "Spectral type",
+            "Luminosity class",
+            "Morgan-Keenan classification",
+            "Color index",
+            "Effective temperature",
+            "Absolute magnitude",
+            "Apparent magnitude"
+        ]
+    },
+    "star_formation_regions": {
+        "description": "Processes and regions of star formation",
+        "topics": [
+            "Molecular cloud",
+            "Giant molecular cloud",
+            "Bok globule",
+            "H II region",
+            "H I region",
+            "Interstellar medium",
+            "Herbig-Haro object",
+            "T Tauri star",
+            "Herbig Ae/Be star",
+            "Protoplanetary disk",
+            "Debris disk",
+            "Bipolar outflow"
+        ]
+    },
+    "low_mass_evolution": {
+        "description": "Evolution of low and medium mass stars",
+        "topics": [
+            "Red dwarf",
+            "Brown dwarf",
+            "Subgiant",
+            "Red giant branch",
+            "Red giant",
+            "Horizontal branch",
+            "Asymptotic giant branch",
+            "Planetary nebula",
+            "White dwarf",
+            "Chandrasekhar limit",
+            "Electron degeneracy pressure"
+        ]
+    },
+    "high_mass_evolution": {
+        "description": "Evolution of massive stars",
+        "topics": [
+            "Blue giant",
+            "Blue supergiant",
+            "Red supergiant",
+            "Wolf-Rayet star",
+            "Luminous blue variable",
+            "Supernova",
+            "Core-collapse supernova",
+            "Type II supernova",
+            "Supernova remnant",
+            "Neutron star",
+            "Pulsar",
+            "Magnetar",
+            "Black hole"
+        ]
+    },
+    "binary_variable_stars": {
+        "description": "Binary systems and variable stars",
+        "topics": [
+            "Binary star",
+            "Eclipsing binary",
+            "Spectroscopic binary",
+            "Type Ia supernova",
+            "Nova",
+            "Variable star",
+            "Cepheid variable",
+            "RR Lyrae variable",
+            "Mira variable"
+        ]
+    },
+    "stellar_physics": {
+        "description": "Physical processes in stars",
+        "topics": [
+            "Nuclear fusion",
+            "Proton-proton chain",
+            "CNO cycle",
+            "Triple-alpha process",
+            "Stellar nucleosynthesis",
+            "S-process",
+            "R-process",
+            "Hydrostatic equilibrium",
+            "Radiation pressure",
+            "Convection zone",
+            "Radiative zone",
+            "Stellar core"
+        ]
+    },
+    "exoplanet_detection": {
+        "description": "Methods for detecting exoplanets",
+        "topics": [
+            "Exoplanet",
+            "Methods of detecting exoplanets",
+            "Transit photometry",
+            "Doppler spectroscopy",
+            "Radial velocity method",
+            "Direct imaging",
+            "Gravitational microlensing",
+            "Astrometry"
+        ]
+    },
+    "exoplanet_types": {
+        "description": "Types and characteristics of exoplanets",
+        "topics": [
+            "Hot Jupiter",
+            "Super-Earth",
+            "Mini-Neptune",
+            "Gas giant",
+            "Terrestrial planet",
+            "Habitable zone",
+            "Planetary equilibrium temperature"
+        ]
+    },
+    "exoplanet_missions": {
+        "description": "Space missions for exoplanet discovery",
+        "topics": [
+            "Kepler space telescope",
+            "TESS (spacecraft)",
+            "James Webb Space Telescope"
+        ]
+    },
+    "2026_dsos": {
+        "description": "Official 2026 Science Olympiad Deep Sky Objects from scioly.org",
+        "topics": [
+            "Orion Molecular Cloud Complex",
+            "NGC 6559",
+            "Sharpless 29",
+            "HP Tau",
+            "T Tauri star",
+            "Mira",
+            "Mira variable",
+            "Helix Nebula",
+            "Janus (star)",
+            "White dwarf"
+        ]
+    },
+    "observational_techniques": {
+        "description": "Measurement techniques and distance determination",
+        "topics": [
+            "Cosmic distance ladder",
+            "Parallax",
+            "Stellar parallax",
+            "Standard candle",
+            "Distance modulus",
+            "Light curve",
+            "Stellar kinematics",
+            "Proper motion",
+            "Spectroscopy",
+            "Photometry"
+        ]
+    },
+    "fundamental_physics": {
+        "description": "Physics foundations for astronomy",
+        "topics": [
+            "Black-body radiation",
+            "Wien's displacement law",
+            "Stefan-Boltzmann law",
+            "Planck's law",
+            "Luminosity",
+            "Solar luminosity",
+            "Inverse-square law",
+            "Kepler's laws of planetary motion",
+            "Orbital mechanics",
+            "Orbital period",
+            "Semi-major axis",
+            "Electromagnetic spectrum"
+        ]
+    }
 }
