@@ -1,5 +1,5 @@
 /**
- * Astro Research Hub - Science Olympiad 2026
+ * Wikipedizer 9000 - Science Olympiad 2026
  * Frontend JavaScript for the astronomy research scraper
  */
 

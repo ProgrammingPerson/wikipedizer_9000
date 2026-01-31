@@ -8,6 +8,7 @@ A Flask web application for the astronomy research scraper.
 import os
 import io
 import json
+import time
 import zipfile
 import uuid
 import shutil
@@ -111,7 +112,6 @@ class WebScraper(AstronomyScraper):
                 print(f"  ⚠ Error from {source_name} for {topic}: {e}")
             
             # Rate limiting
-            import time
             time.sleep(self.config.request_delay)
         
         return results
@@ -192,6 +192,12 @@ def run_scrape_job(job_id: str, categories: dict, sources: list, output_dir: str
 def index():
     """Main page."""
     return render_template("index.html", categories=DEFAULT_CATEGORIES)
+
+
+@app.route("/health")
+def health_check():
+    """Health check endpoint for hosting platforms."""
+    return jsonify({"status": "healthy", "service": "wikipedizer-9000"})
 
 
 @app.route("/api/categories")
@@ -282,7 +288,7 @@ def download_results(job_id):
     memory_file = io.BytesIO()
     
     with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for root, dirs, files in os.walk(output_dir):
+        for root, _, files in os.walk(output_dir):
             for file in files:
                 file_path = os.path.join(root, file)
                 arcname = os.path.relpath(file_path, output_dir)
