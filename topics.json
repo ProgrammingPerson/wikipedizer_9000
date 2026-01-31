@@ -1,0 +1,139 @@
+{
+  "stellar_evolution": {
+    "description": "Life cycles of stars from formation to end states",
+    "topics": [
+      "Stellar evolution",
+      "Star formation",
+      "Protostar",
+      "Main sequence",
+      "Red giant",
+      "White dwarf",
+      "Neutron star",
+      "Black hole",
+      "Supernova",
+      "Planetary nebula"
+    ]
+  },
+  "stellar_classification": {
+    "description": "Classification systems and stellar properties",
+    "topics": [
+      "Stellar classification",
+      "Hertzsprung-Russell diagram",
+      "Spectral type",
+      "Luminosity class",
+      "Morgan-Keenan classification",
+      "Color index",
+      "Effective temperature",
+      "Absolute magnitude",
+      "Apparent magnitude"
+    ]
+  },
+  "star_formation": {
+    "description": "Processes and regions of star formation",
+    "topics": [
+      "Molecular cloud",
+      "Giant molecular cloud",
+      "H II region",
+      "H I region",
+      "Herbig-Haro object",
+      "T Tauri star",
+      "Herbig Ae/Be star",
+      "Protoplanetary disk",
+      "Debris disk",
+      "Brown dwarf"
+    ]
+  },
+  "stellar_physics": {
+    "description": "Physical processes in stars",
+    "topics": [
+      "Nuclear fusion",
+      "Proton-proton chain",
+      "CNO cycle",
+      "Triple-alpha process",
+      "Stellar nucleosynthesis",
+      "Hydrostatic equilibrium",
+      "Radiation pressure",
+      "Convection zone",
+      "Radiative zone",
+      "Stellar core"
+    ]
+  },
+  "exoplanets": {
+    "description": "Planets orbiting other stars and detection methods",
+    "topics": [
+      "Exoplanet",
+      "Exoplanet detection methods",
+      "Transit method",
+      "Radial velocity method",
+      "Direct imaging exoplanets",
+      "Gravitational microlensing",
+      "Hot Jupiter",
+      "Super-Earth",
+      "Mini-Neptune",
+      "Habitable zone"
+    ]
+  },
+  "notable_exoplanets_2026": {
+    "description": "Specific exoplanets and systems for 2026 Science Olympiad",
+    "topics": [
+      "HD 80606 b",
+      "WASP-17b",
+      "WASP-121b",
+      "LTT 9779 b",
+      "GJ 1214 b",
+      "K2-18b",
+      "TOI-270",
+      "LHS 3844 b",
+      "55 Cancri e",
+      "Kepler-62",
+      "AU Microscopii b",
+      "Epsilon Eridani b",
+      "PSR B1257+12",
+      "WD 1856+534"
+    ]
+  },
+  "deep_sky_objects": {
+    "description": "Nebulae and DSOs relevant to stellar evolution",
+    "topics": [
+      "Orion Nebula",
+      "Tarantula Nebula",
+      "Eagle Nebula",
+      "Carina Nebula",
+      "Pillars of Creation",
+      "Horsehead Nebula",
+      "Lagoon Nebula",
+      "Trifid Nebula",
+      "Crab Nebula",
+      "Ring Nebula"
+    ]
+  },
+  "observational_techniques": {
+    "description": "Measurement techniques and distance determination",
+    "topics": [
+      "Cosmic distance ladder",
+      "Parallax",
+      "Standard candle",
+      "Cepheid variable",
+      "Type Ia supernova",
+      "Light curve",
+      "Stellar kinematics",
+      "Proper motion",
+      "Radial velocity",
+      "Doppler spectroscopy"
+    ]
+  },
+  "fundamental_physics": {
+    "description": "Physics foundations for astronomy",
+    "topics": [
+      "Black-body radiation",
+      "Wien's displacement law",
+      "Stefan-Boltzmann law",
+      "Planck's law",
+      "Luminosity",
+      "Kepler's laws of planetary motion",
+      "Orbital mechanics",
+      "Gravitational binding energy",
+      "Electromagnetic spectrum"
+    ]
+  }
+}

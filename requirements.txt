@@ -1,0 +1,13 @@
+# Science Olympiad Astronomy 2026 - Web Application
+# Install with: pip install -r requirements.txt
+
+# Core scraping
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+
+# Web application
+flask>=3.0.0
+
+# Production server
+gunicorn>=21.0.0

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Research Hub | Science Olympiad 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-stars"></div>
+    <div class="bg-nebula"></div>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="2"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" stroke-width="1.5" transform="rotate(-20 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" stroke-width="1.5" transform="rotate(40 50 50)"/>
+                        <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Astro Research Hub</h1>
+                    <span class="subtitle">Science Olympiad 2026</span>
+                </div>
+            </div>
+            <div class="header-badge">
+                <span class="badge-dot"></span>
+                Stellar Evolution & Exoplanets
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="main">
+            <!-- Step indicator -->
+            <div class="steps">
+                <div class="step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Select Topics</span>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Choose Sources</span>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Generate</span>
+                </div>
+            </div>
+
+            <!-- Panel container -->
+            <div class="panel-container">
+                <!-- Step 1: Topic Selection -->
+                <section class="panel active" id="panel-topics">
+                    <div class="panel-header">
+                        <h2>Select Your Topics</h2>
+                        <p>Choose categories and specific topics for your research notes</p>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-ghost" onclick="selectAll()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4"/>
+                                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                            </svg>
+                            Select All
+                        </button>
+                        <button class="btn btn-ghost" onclick="deselectAll()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            </svg>
+                            Deselect All
+                        </button>
+                        <div class="selection-count">
+                            <span id="topic-count">0</span> topics selected
+                        </div>
+                    </div>
+
+                    <div class="categories-grid" id="categories-container">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+
+                    <div class="panel-footer">
+                        <button class="btn btn-primary btn-large" onclick="goToStep(2)">
+                            Continue to Sources
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Step 2: Source Selection -->
+                <section class="panel" id="panel-sources">
+                    <div class="panel-header">
+                        <h2>Choose Data Sources</h2>
+                        <p>Select which sources to scrape for your research materials</p>
+                    </div>
+
+                    <div class="sources-grid">
+                        <label class="source-card selected" data-source="wikipedia">
+                            <input type="checkbox" checked>
+                            <div class="source-icon wikipedia">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.09 13.119c-.936 1.932-2.217 4.548-2.853 5.728-.616 1.074-1.127.931-1.532.029-1.406-3.321-4.293-9.144-5.651-12.409-.251-.601-.441-.987-.619-1.139-.181-.15-.554-.24-1.122-.271C.103 5.033 0 4.982 0 4.898v-.455l.052-.045c.924-.005 5.401 0 5.401 0l.051.045v.434c0 .119-.075.176-.225.176l-.564.031c-.485.029-.727.164-.727.436 0 .135.053.33.166.601 1.082 2.646 4.818 10.521 4.818 10.521l.136.046 2.411-4.81-.482-1.067-1.658-3.264s-.318-.654-.428-.872c-.728-1.443-.712-1.518-1.447-1.617-.207-.023-.313-.05-.313-.149v-.468l.06-.045h4.292l.113.037v.451c0 .105-.076.15-.227.15l-.308.047c-.792.061-.661.381-.136 1.422l1.582 3.252 1.758-3.504c.293-.64.233-.801.111-.947-.07-.084-.305-.22-.812-.24l-.201-.021c-.052 0-.098-.015-.145-.051-.045-.031-.067-.076-.067-.129v-.427l.061-.045c1.247-.008 4.043 0 4.043 0l.059.045v.436c0 .121-.059.178-.193.178-.646.03-.782.095-1.023.439-.12.186-.375.589-.646 1.039l-2.301 4.273-.065.135 2.792 5.712.17.048 4.396-10.438c.154-.422.129-.722-.064-.895-.197-.172-.346-.273-.857-.295l-.42-.016c-.061 0-.105-.014-.152-.045-.043-.029-.072-.075-.072-.119v-.436l.059-.045h4.961l.041.045v.437c0 .119-.074.18-.209.18-.648.03-1.127.18-1.443.421-.314.255-.557.616-.736 1.067 0 0-4.043 9.258-5.426 12.339-.525 1.007-1.053.917-1.503-.031-.571-1.171-1.773-3.786-2.646-5.71l.053-.036z"/>
+                                </svg>
+                            </div>
+                            <div class="source-info">
+                                <h3>Wikipedia</h3>
+                                <p>Comprehensive encyclopedia articles with detailed explanations</p>
+                            </div>
+                            <div class="source-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 12l5 5L20 7"/>
+                                </svg>
+                            </div>
+                        </label>
+
+                        <label class="source-card selected" data-source="nasa">
+                            <input type="checkbox" checked>
+                            <div class="source-icon nasa">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.182a9.818 9.818 0 110 19.636 9.818 9.818 0 010-19.636zm-2.51 4.283c-2.082.436-3.89 1.835-4.893 3.724.456-3.166 2.788-5.711 5.834-6.362-.447.698-.779 1.571-.941 2.638zm.196 1.435c.203-1.427.732-2.54 1.424-3.004.078-.053.16-.085.243-.099.596.017 1.116.835 1.362 2.076a9.536 9.536 0 00-.913-.045c-.74 0-1.457.06-2.116.172v.9zm4.785.9c.13.528.207 1.102.221 1.709h-2.858v-2.364c.924.046 1.819.213 2.637.459v.196zm-5.755.245c-.738.249-1.399.573-1.961.958l-.016.011a7.574 7.574 0 00-.698 3.986H4.36a7.631 7.631 0 011.645-4.155c.807-.404 1.77-.684 2.711-.8zm2.88-.034v2.509H8.781c.009-.649.098-1.268.252-1.842.876-.231 1.818-.389 2.563-.488v-.179zm2.58 2.509h2.883a5.926 5.926 0 00-.259-1.782 11.07 11.07 0 00-2.624-.482v2.264zm5.464 0h-2.34a6.134 6.134 0 00-.252-1.908c.887.405 1.64.995 2.178 1.708.145.066.287.133.414.2zm-5.464 2.182v2.263c.91-.083 1.803-.246 2.637-.482.148-.56.236-1.165.247-1.781h-2.884zm-2.58 0H8.781c.01.61.099 1.202.248 1.749.744-.098 1.686-.253 2.563-.485v-2.264zm-5.235 0H4.36a7.628 7.628 0 001.75 4.359c.534.362 1.156.664 1.848.898a6.022 6.022 0 01-.238-1.972h1.886a7.4 7.4 0 00.701 3.153c-.94-.116-1.903-.395-2.711-.799a7.636 7.636 0 01-1.645-4.156h-.01l-.58-.183v-.3zm10.699 0c-.014.592-.09 1.154-.213 1.672-.818.245-1.713.406-2.624.478v-2.15h2.837zm2.58 0c-.008.711-.098 1.389-.259 2.018-.53.697-1.279 1.282-2.159 1.69.156-.642.246-1.335.252-2.064v-1.644h2.166zm-5.418 4.413c-.246 1.241-.766 2.058-1.362 2.076a.51.51 0 01-.243-.099c-.692-.465-1.22-1.577-1.424-3.004.659.112 1.376.172 2.116.172.31 0 .617-.015.913-.045v.9zm2.206-.195a9.68 9.68 0 01-.872.064c-.315 0-.624-.015-.925-.044v-.797c.162 1.067.494 1.94.941 2.638-3.046-.651-5.378-3.196-5.834-6.362 1.003 1.889 2.811 3.288 4.893 3.724-.079.284-.149.536-.203.777z"/>
+                                </svg>
+                            </div>
+                            <div class="source-info">
+                                <h3>NASA</h3>
+                                <p>Official NASA science resources and space agency content</p>
+                            </div>
+                            <div class="source-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 12l5 5L20 7"/>
+                                </svg>
+                            </div>
+                        </label>
+
+                        <label class="source-card selected" data-source="esa">
+                            <input type="checkbox" checked>
+                            <div class="source-icon esa">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div class="source-info">
+                                <h3>ESA</h3>
+                                <p>European Space Agency research and educational content</p>
+                            </div>
+                            <div class="source-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 12l5 5L20 7"/>
+                                </svg>
+                            </div>
+                        </label>
+
+                        <label class="source-card selected" data-source="educational">
+                            <input type="checkbox" checked>
+                            <div class="source-icon educational">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+                                </svg>
+                            </div>
+                            <div class="source-info">
+                                <h3>Educational</h3>
+                                <p>Academic astronomy resources and educational sites</p>
+                            </div>
+                            <div class="source-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 12l5 5L20 7"/>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="panel-footer">
+                        <button class="btn btn-ghost" onclick="goToStep(1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button class="btn btn-primary btn-large" onclick="startScraping()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            Generate Research Notes
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Step 3: Progress & Download -->
+                <section class="panel" id="panel-progress">
+                    <div class="panel-header">
+                        <h2>Generating Your Notes</h2>
+                        <p>Scraping content from multiple sources...</p>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-visual">
+                            <div class="progress-ring">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+                                    <circle class="progress-ring-fill" cx="60" cy="60" r="52" id="progress-ring"/>
+                                </svg>
+                                <div class="progress-percentage" id="progress-percentage">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-details">
+                            <div class="progress-stat">
+                                <span class="stat-label">Current Topic</span>
+                                <span class="stat-value" id="current-topic">Initializing...</span>
+                            </div>
+                            <div class="progress-stat">
+                                <span class="stat-label">Source</span>
+                                <span class="stat-value" id="current-source">-</span>
+                            </div>
+                            <div class="progress-stat">
+                                <span class="stat-label">Progress</span>
+                                <span class="stat-value"><span id="completed-count">0</span> / <span id="total-count">0</span> topics</span>
+                            </div>
+                            <div class="progress-stat">
+                                <span class="stat-label">Files Generated</span>
+                                <span class="stat-value" id="files-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download section (hidden until complete) -->
+                    <div class="download-section" id="download-section" style="display: none;">
+                        <div class="download-ready">
+                            <div class="download-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </div>
+                            <h3>Your Research Notes are Ready!</h3>
+                            <p>All files have been generated and packaged for download</p>
+                            <button class="btn btn-primary btn-large" onclick="downloadResults()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Download ZIP
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer" id="progress-footer">
+                        <div class="progress-status">
+                            <span class="status-dot active"></span>
+                            <span id="status-text">Processing...</span>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer" id="complete-footer" style="display: none;">
+                        <button class="btn btn-ghost" onclick="resetApp()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/>
+                                <path d="M3 3v5h5"/>
+                            </svg>
+                            Start Over
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built for Science Olympiad competitors • Good luck at competition! 🚀</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
