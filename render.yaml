@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: astro-research-hub
+    name: wikipedizer-9000
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn wsgi:app --workers 2 --threads 4 --timeout 120
