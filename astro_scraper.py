@@ -44,22 +44,23 @@ class ScraperConfig:
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # DEFAULT 2026 SCIENCE OLYMPIAD ASTRONOMY TOPICS
+# Based on official Science Olympiad Division C Rules 2026
+# Focus: Stellar Evolution and Exoplanets
 # ═══════════════════════════════════════════════════════════════════════════════
 
 DEFAULT_CATEGORIES = {
-    "stellar_evolution": {
-        "description": "Life cycles of stars from formation to end states",
+    "stellar_evolution_basics": {
+        "description": "Core concepts of how stars change over time",
         "topics": [
             "Stellar evolution",
             "Star formation",
+            "Jeans mass",
             "Protostar",
+            "Pre-main-sequence star",
+            "Zero-age main sequence",
             "Main sequence",
-            "Red giant",
-            "White dwarf",
-            "Neutron star",
-            "Black hole",
-            "Supernova",
-            "Planetary nebula",
+            "Stellar mass",
+            "Mass-luminosity relation",
         ]
     },
     "stellar_classification": {
@@ -76,19 +77,69 @@ DEFAULT_CATEGORIES = {
             "Apparent magnitude",
         ]
     },
-    "star_formation": {
+    "star_formation_regions": {
         "description": "Processes and regions of star formation",
         "topics": [
             "Molecular cloud",
             "Giant molecular cloud",
+            "Bok globule",
             "H II region",
             "H I region",
+            "Interstellar medium",
             "Herbig-Haro object",
             "T Tauri star",
             "Herbig Ae/Be star",
             "Protoplanetary disk",
             "Debris disk",
+            "Bipolar outflow",
+        ]
+    },
+    "low_mass_evolution": {
+        "description": "Evolution of low and medium mass stars",
+        "topics": [
+            "Red dwarf",
             "Brown dwarf",
+            "Subgiant",
+            "Red giant branch",
+            "Red giant",
+            "Horizontal branch",
+            "Asymptotic giant branch",
+            "Planetary nebula",
+            "White dwarf",
+            "Chandrasekhar limit",
+            "Electron degeneracy pressure",
+        ]
+    },
+    "high_mass_evolution": {
+        "description": "Evolution of massive stars",
+        "topics": [
+            "Blue giant",
+            "Blue supergiant",
+            "Red supergiant",
+            "Wolf-Rayet star",
+            "Luminous blue variable",
+            "Supernova",
+            "Core-collapse supernova",
+            "Type II supernova",
+            "Supernova remnant",
+            "Neutron star",
+            "Pulsar",
+            "Magnetar",
+            "Black hole",
+        ]
+    },
+    "binary_variable_stars": {
+        "description": "Binary systems and variable stars",
+        "topics": [
+            "Binary star",
+            "Eclipsing binary",
+            "Spectroscopic binary",
+            "Type Ia supernova",
+            "Nova",
+            "Variable star",
+            "Cepheid variable",
+            "RR Lyrae variable",
+            "Mira variable",
         ]
     },
     "stellar_physics": {
@@ -99,6 +150,8 @@ DEFAULT_CATEGORIES = {
             "CNO cycle",
             "Triple-alpha process",
             "Stellar nucleosynthesis",
+            "S-process",
+            "R-process",
             "Hydrostatic equilibrium",
             "Radiation pressure",
             "Convection zone",
@@ -106,23 +159,33 @@ DEFAULT_CATEGORIES = {
             "Stellar core",
         ]
     },
-    "exoplanets": {
-        "description": "Planets orbiting other stars and detection methods",
+    "exoplanet_detection": {
+        "description": "Methods for detecting exoplanets",
         "topics": [
             "Exoplanet",
-            "Exoplanet detection methods",
-            "Transit method",
+            "Methods of detecting exoplanets",
+            "Transit photometry",
+            "Doppler spectroscopy",
             "Radial velocity method",
-            "Direct imaging exoplanets",
+            "Direct imaging",
             "Gravitational microlensing",
+            "Astrometry",
+        ]
+    },
+    "exoplanet_types": {
+        "description": "Types and characteristics of exoplanets",
+        "topics": [
             "Hot Jupiter",
             "Super-Earth",
             "Mini-Neptune",
+            "Gas giant",
+            "Terrestrial planet",
             "Habitable zone",
+            "Planetary equilibrium temperature",
         ]
     },
-    "notable_exoplanets": {
-        "description": "Specific exoplanets of interest for 2026",
+    "notable_exoplanets_2026": {
+        "description": "Specific exoplanets for 2026 Science Olympiad",
         "topics": [
             "HD 80606 b",
             "WASP-17b",
@@ -134,35 +197,55 @@ DEFAULT_CATEGORIES = {
             "LHS 3844 b",
             "55 Cancri e",
             "Kepler-62",
-            "AU Microscopii b",
-            "Epsilon Eridani b",
+            "AU Microscopii",
+            "Epsilon Eridani",
+            "PSR B1257+12",
+            "WD 1856+534",
+            "TRAPPIST-1",
+            "Proxima Centauri b",
+            "51 Pegasi b",
+        ]
+    },
+    "exoplanet_missions": {
+        "description": "Space missions for exoplanet discovery",
+        "topics": [
+            "Kepler space telescope",
+            "TESS (spacecraft)",
+            "James Webb Space Telescope",
         ]
     },
     "deep_sky_objects": {
-        "description": "Nebulae and other DSOs relevant to stellar evolution",
+        "description": "Nebulae and DSOs relevant to stellar evolution",
         "topics": [
             "Orion Nebula",
             "Tarantula Nebula",
             "Eagle Nebula",
-            "Carina Nebula",
             "Pillars of Creation",
+            "Carina Nebula",
+            "Eta Carinae",
             "Horsehead Nebula",
             "Lagoon Nebula",
             "Trifid Nebula",
+            "Crab Nebula",
+            "Crab Pulsar",
+            "Ring Nebula",
+            "Helix Nebula",
+            "Cat's Eye Nebula",
         ]
     },
-    "observational_astronomy": {
+    "observational_techniques": {
         "description": "Measurement techniques and distance determination",
         "topics": [
             "Cosmic distance ladder",
             "Parallax",
+            "Stellar parallax",
             "Standard candle",
-            "Cepheid variable",
-            "Type Ia supernova",
+            "Distance modulus",
             "Light curve",
             "Stellar kinematics",
             "Proper motion",
-            "Radial velocity",
+            "Spectroscopy",
+            "Photometry",
         ]
     },
     "fundamental_physics": {
@@ -173,9 +256,13 @@ DEFAULT_CATEGORIES = {
             "Stefan-Boltzmann law",
             "Planck's law",
             "Luminosity",
+            "Solar luminosity",
+            "Inverse-square law",
             "Kepler's laws of planetary motion",
             "Orbital mechanics",
-            "Gravitational binding energy",
+            "Orbital period",
+            "Semi-major axis",
+            "Electromagnetic spectrum",
         ]
     },
 }
