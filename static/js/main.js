@@ -356,14 +356,9 @@ function updateProgressUI(data) {
         statusMap[data.status] || 'Processing...';
 }
 
-async function checkJobStatus(jobId) {
-    // If SSE disconnects, we can poll the status
-    try {
-        const response = await fetch(`/api/progress/${jobId}`);
-        // If we get here, job might still be running
-    } catch (error) {
-        console.error('Failed to check job status:', error);
-    }
+function checkJobStatus(jobId) {
+    // SSE disconnected - this is usually transient, user can refresh if needed
+    console.log('SSE connection closed for job:', jobId);
 }
 
 function showDownloadSection() {
@@ -438,6 +433,18 @@ async function resetApp() {
     document.getElementById('progress-footer').style.display = 'flex';
     document.getElementById('complete-footer').style.display = 'none';
     
+    // Reset Drive UI
+    const driveStatus = document.getElementById('drive-upload-status');
+    const driveSuccess = document.getElementById('drive-success');
+    const driveBtn = document.getElementById('btn-upload-drive');
+    if (driveStatus) driveStatus.style.display = 'none';
+    if (driveSuccess) driveSuccess.style.display = 'none';
+    if (driveBtn) {
+        driveBtn.disabled = false;
+        const btnText = document.getElementById('drive-btn-text');
+        if (btnText) btnText.textContent = 'Save to Google Drive';
+    }
+    
     // Reset status dot
     const statusDot = document.querySelector('.status-dot');
     if (statusDot) {
@@ -454,3 +461,147 @@ async function resetApp() {
     // Go back to step 1
     goToStep(1);
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// GOOGLE DRIVE INTEGRATION
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Show the Drive options modal
+ */
+function showDriveOptions() {
+    const modal = document.getElementById('drive-options-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        
+        // Set default folder name with date
+        const folderInput = document.getElementById('drive-folder-name');
+        if (folderInput && !folderInput.value) {
+            folderInput.value = `Astronomy_Notes_${new Date().toISOString().split('T')[0]}`;
+        }
+    }
+}
+
+/**
+ * Hide the Drive options modal
+ */
+function hideDriveOptions() {
+    const modal = document.getElementById('drive-options-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+/**
+ * Disconnect from Google Drive
+ */
+async function disconnectDrive() {
+    if (!confirm('Disconnect from Google Drive?')) {
+        return;
+    }
+    
+    try {
+        const response = await fetch('/oauth/google/disconnect', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (response.ok) {
+            // Reload the page to update the UI
+            window.location.reload();
+        }
+    } catch (error) {
+        console.error('Failed to disconnect:', error);
+        alert('Failed to disconnect from Google Drive');
+    }
+}
+
+/**
+ * Upload current job results to Google Drive
+ */
+async function uploadToDrive() {
+    if (!currentJobId) {
+        alert('No job results available');
+        return;
+    }
+    
+    // Get folder name from input
+    const folderInput = document.getElementById('drive-folder-name');
+    const folderName = folderInput?.value || `Astronomy_Notes_${new Date().toISOString().split('T')[0]}`;
+    
+    // Hide modal
+    hideDriveOptions();
+    
+    const driveBtn = document.getElementById('btn-upload-drive');
+    const driveStatus = document.getElementById('drive-upload-status');
+    const driveSuccess = document.getElementById('drive-success');
+    const driveBtnText = document.getElementById('drive-btn-text');
+    
+    // Disable button and show loading
+    if (driveBtn) driveBtn.disabled = true;
+    if (driveBtnText) driveBtnText.textContent = 'Uploading...';
+    if (driveStatus) driveStatus.style.display = 'block';
+    if (driveSuccess) driveSuccess.style.display = 'none';
+    
+    try {
+        const response = await fetch(`/api/drive/upload/${currentJobId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                folder_name: folderName
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+            // Check if authentication is needed
+            if (data.needs_auth) {
+                // Redirect to Google auth
+                window.location.href = '/oauth/google/authorize';
+                return;
+            }
+            throw new Error(data.error || 'Upload failed');
+        }
+        
+        // Show success
+        if (driveStatus) driveStatus.style.display = 'none';
+        if (driveSuccess) driveSuccess.style.display = 'flex';
+        if (driveBtnText) driveBtnText.textContent = 'Saved to Drive!';
+        
+        // Set folder link if available
+        const folderLink = document.getElementById('drive-folder-link');
+        if (folderLink && data.folder_link) {
+            folderLink.href = data.folder_link;
+            folderLink.textContent = `Open "${data.folder_name}" in Drive`;
+        } else if (folderLink) {
+            folderLink.href = 'https://drive.google.com';
+            folderLink.textContent = 'Open Google Drive';
+        }
+        
+    } catch (error) {
+        console.error('Drive upload failed:', error);
+        
+        // Show error state
+        if (driveStatus) driveStatus.style.display = 'none';
+        if (driveBtn) driveBtn.disabled = false;
+        if (driveBtnText) driveBtnText.textContent = 'Save to Google Drive';
+        
+        alert('Failed to upload to Google Drive: ' + error.message);
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('drive-options-modal');
+    if (modal && e.target === modal) {
+        hideDriveOptions();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        hideDriveOptions();
+    }
+});

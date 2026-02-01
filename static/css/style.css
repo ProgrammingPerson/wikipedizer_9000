@@ -12,7 +12,7 @@
     --bg-card: #161a26;
     --bg-card-hover: #1c2132;
     --bg-elevated: #1e2333;
-    
+
     /* Accent colors - Nebula inspired */
     --accent-primary: #6366f1;
     --accent-primary-glow: rgba(99, 102, 241, 0.4);
@@ -20,27 +20,27 @@
     --accent-tertiary: #06b6d4;
     --accent-success: #10b981;
     --accent-warning: #f59e0b;
-    
+
     /* Text colors */
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
-    
+
     /* Borders */
     --border-subtle: rgba(255, 255, 255, 0.06);
     --border-default: rgba(255, 255, 255, 0.1);
     --border-accent: rgba(99, 102, 241, 0.3);
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
     --shadow-glow: 0 0 40px var(--accent-primary-glow);
-    
+
     /* Typography */
     --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    
+
     /* Spacing */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
@@ -48,13 +48,13 @@
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
-    
+
     /* Border radius */
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 16px;
     --radius-xl: 24px;
-    
+
     /* Transitions */
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
@@ -62,7 +62,9 @@
 }
 
 /* ─── Reset & Base ──────────────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -86,15 +88,15 @@ body {
 .bg-stars {
     position: fixed;
     inset: 0;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.2), transparent),
-        radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(2px 2px at 200px 50px, rgba(255,255,255,0.15), transparent),
-        radial-gradient(1px 1px at 250px 160px, rgba(255,255,255,0.25), transparent),
-        radial-gradient(2px 2px at 300px 90px, rgba(255,255,255,0.2), transparent);
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.2), transparent),
+        radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.3), transparent),
+        radial-gradient(2px 2px at 200px 50px, rgba(255, 255, 255, 0.15), transparent),
+        radial-gradient(1px 1px at 250px 160px, rgba(255, 255, 255, 0.25), transparent),
+        radial-gradient(2px 2px at 300px 90px, rgba(255, 255, 255, 0.2), transparent);
     background-size: 350px 200px;
     animation: twinkle 8s ease-in-out infinite alternate;
     pointer-events: none;
@@ -102,14 +104,21 @@ body {
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .bg-nebula {
     position: fixed;
     inset: 0;
-    background: 
+    background:
         radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
         radial-gradient(ellipse at 60% 30%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);
@@ -152,8 +161,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .logo-icon svg {
@@ -199,8 +215,17 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(0.9); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
 }
 
 /* ─── Steps Indicator ───────────────────────────────────────────────────────── */
@@ -297,8 +322,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .panel-header {
@@ -792,8 +824,15 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .download-icon svg {
@@ -827,47 +866,47 @@ body {
         gap: var(--space-md);
         text-align: center;
     }
-    
+
     .steps {
         flex-wrap: wrap;
     }
-    
+
     .step-connector {
         display: none;
     }
-    
+
     .categories-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .sources-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .progress-container {
         flex-direction: column;
     }
-    
+
     .progress-details {
         grid-template-columns: 1fr;
         width: 100%;
     }
-    
+
     .quick-actions {
         flex-wrap: wrap;
     }
-    
+
     .selection-count {
         width: 100%;
         margin-left: 0;
         margin-top: var(--space-sm);
     }
-    
+
     .panel-footer {
         flex-direction: column;
         gap: var(--space-md);
     }
-    
+
     .btn-large {
         width: 100%;
         justify-content: center;
@@ -897,4 +936,383 @@ body {
 ::selection {
     background: var(--accent-primary);
     color: white;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   GOOGLE DRIVE INTEGRATION
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Header actions container */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* Drive connect button */
+.btn-drive {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(66, 133, 244, 0.1);
+    border: 1px solid rgba(66, 133, 244, 0.3);
+    color: #8ab4f8;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-decoration: none;
+}
+
+.btn-drive:hover {
+    background: rgba(66, 133, 244, 0.2);
+    border-color: rgba(66, 133, 244, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-drive.connected {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: var(--accent-success);
+}
+
+.btn-drive.connected:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.btn-drive.connected:hover span::after {
+    content: ' (Disconnect)';
+}
+
+.btn-drive.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(100, 116, 139, 0.1);
+    border-color: rgba(100, 116, 139, 0.3);
+    color: var(--text-muted);
+}
+
+.btn-drive.disabled:hover {
+    transform: none;
+    background: rgba(100, 116, 139, 0.1);
+}
+
+.btn-drive svg {
+    flex-shrink: 0;
+}
+
+/* Download options */
+.download-options {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Drive upload button */
+.btn-drive-upload {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.15), rgba(52, 168, 83, 0.15));
+    border: 1px solid rgba(66, 133, 244, 0.4);
+    color: #8ab4f8;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.btn-drive-upload:hover {
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.25), rgba(52, 168, 83, 0.25));
+    border-color: rgba(66, 133, 244, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(66, 133, 244, 0.2);
+}
+
+.btn-drive-upload:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-drive-upload svg {
+    flex-shrink: 0;
+}
+
+/* Drive upload status */
+.drive-upload-status {
+    margin-top: var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(66, 133, 244, 0.1);
+    border: 1px solid rgba(66, 133, 244, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.drive-status-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    justify-content: center;
+    color: #8ab4f8;
+}
+
+.drive-status-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(66, 133, 244, 0.3);
+    border-top-color: #8ab4f8;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Drive success message */
+.drive-success {
+    margin-top: var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    justify-content: center;
+    color: var(--accent-success);
+}
+
+.drive-success svg {
+    flex-shrink: 0;
+}
+
+.drive-success-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.drive-success-text a {
+    color: #8ab4f8;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.drive-success-text a:hover {
+    text-decoration: underline;
+}
+
+/* Drive Modal */
+.drive-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.drive-modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    max-width: 420px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.drive-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.drive-modal-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.drive-modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.drive-modal-close:hover {
+    color: var(--text-primary);
+}
+
+.drive-modal-body {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.drive-modal-body p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.drive-connected-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--accent-success);
+    font-weight: 500;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+.drive-folder-input {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.drive-folder-input label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.drive-folder-input input {
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.drive-folder-input input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.drive-help-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.drive-not-configured {
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.drive-not-configured svg {
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.drive-not-configured h5 {
+    font-size: 1rem;
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--text-primary);
+}
+
+.drive-not-configured p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.drive-setup-info {
+    background: var(--bg-secondary);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.drive-setup-info strong {
+    display: block;
+    margin-bottom: var(--space-xs);
+    color: var(--text-primary);
+}
+
+.drive-setup-info code {
+    background: var(--bg-elevated);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-tertiary);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* Mobile adjustments for Drive UI */
+@media (max-width: 768px) {
+    .header-actions {
+        flex-direction: column-reverse;
+        gap: var(--space-sm);
+        align-items: flex-end;
+    }
+
+    .btn-drive {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .btn-drive span {
+        display: none;
+    }
+
+    .download-options {
+        flex-direction: column;
+    }
+
+    .btn-drive-upload {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .drive-modal-content {
+        width: 95%;
+        margin: var(--space-md);
+    }
 }
