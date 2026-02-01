@@ -102,7 +102,7 @@ GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
 def get_redirect_uri():
     """Get redirect URI based on environment."""
     if IS_PRODUCTION:
-        return os.environ.get('GOOGLE_REDIRECT_URI', 'https://your-app.onrender.com/oauth/callback')
+        return os.environ.get('GOOGLE_REDIRECT_URI', 'https://wikipedizer-9000.onrender.com/oauth/callback')
     else:
         return 'http://localhost:5001/oauth/callback'
 
