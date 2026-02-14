@@ -397,6 +397,16 @@ function downloadResults() {
     window.location.href = `/api/download/${currentJobId}`;
 }
 
+function downloadTextFile() {
+    if (!currentJobId) {
+        alert('No job ID found');
+        return;
+    }
+    
+    // Trigger download
+    window.location.href = `/api/download-text/${currentJobId}`;
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // RESET
 // ═══════════════════════════════════════════════════════════════════════════════

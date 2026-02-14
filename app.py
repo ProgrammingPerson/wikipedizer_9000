@@ -499,6 +499,87 @@ def download_results(job_id):
     )
 
 
+@app.route("/api/download-text/<job_id>")
+def download_text_file(job_id):
+    """Download all results as a single concatenated text file."""
+    if job_id not in jobs:
+        return jsonify({"error": "Job not found"}), 404
+    
+    job = jobs[job_id]
+    if job["status"] != "complete":
+        return jsonify({"error": "Job not complete"}), 400
+    
+    output_dir = job["output_dir"]
+    
+    if not os.path.exists(output_dir):
+        return jsonify({"error": "Output directory not found"}), 404
+    
+    # Collect all text files and sort them
+    text_files = []
+    for root, _, files in os.walk(output_dir):
+        for file in files:
+            if file.endswith('.txt'):
+                file_path = os.path.join(root, file)
+                rel_path = os.path.relpath(file_path, output_dir)
+                text_files.append((rel_path, file_path))
+    
+    # Sort files by path for consistent ordering
+    text_files.sort(key=lambda x: x[0])
+    
+    if not text_files:
+        return jsonify({"error": "No text files found"}), 404
+    
+    # Concatenate all files with separators
+    concatenated_content = []
+    
+    # Add header
+    concatenated_content.append("=" * 80)
+    concatenated_content.append("  ASTRONOMY RESEARCH NOTES - COMPLETE COLLECTION")
+    concatenated_content.append("=" * 80)
+    concatenated_content.append(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    concatenated_content.append(f"Total Files: {len(text_files)}")
+    concatenated_content.append("=" * 80)
+    concatenated_content.append("")
+    
+    # Add each file's content
+    for i, (rel_path, file_path) in enumerate(text_files, 1):
+        concatenated_content.append("")
+        concatenated_content.append("")
+        concatenated_content.append("╔" + "═" * 78 + "╗")
+        concatenated_content.append(f"║  File {i}/{len(text_files)}: {rel_path}".ljust(79) + "║")
+        concatenated_content.append("╚" + "═" * 78 + "╝")
+        concatenated_content.append("")
+        
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                concatenated_content.append(content)
+        except Exception as e:
+            concatenated_content.append(f"[Error reading file: {str(e)}]")
+        
+        concatenated_content.append("")
+        concatenated_content.append("")
+    
+    # Add footer
+    concatenated_content.append("")
+    concatenated_content.append("=" * 80)
+    concatenated_content.append("  END OF COLLECTION")
+    concatenated_content.append("=" * 80)
+    
+    # Create text file in memory
+    text_content = "\n".join(concatenated_content)
+    memory_file = io.BytesIO()
+    memory_file.write(text_content.encode('utf-8'))
+    memory_file.seek(0)
+    
+    return send_file(
+        memory_file,
+        mimetype="text/plain",
+        as_attachment=True,
+        download_name=f"astronomy_notes_{job_id}.txt"
+    )
+
+
 @app.route("/api/cleanup/<job_id>", methods=["POST"])
 def cleanup_job(job_id):
     """Clean up job files."""
